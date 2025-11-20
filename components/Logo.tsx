@@ -8,11 +8,9 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto" }) => {
   const [imageError, setImageError] = useState(false);
 
   // Logic:
-  // 1. Cố gắng hiển thị file ./logo.png
+  // 1. Cố gắng hiển thị file /logo.png (đường dẫn tuyệt đối từ root)
   // 2. Nếu lỗi (không tìm thấy file), hiển thị SVG mặc định
-  // ĐỂ THAY LOGO: Bạn hãy lưu file ảnh logo của bạn thành tên "logo.png" 
-  // và đặt ở thư mục gốc (cùng cấp với index.html)
-
+  
   if (imageError) {
     return (
       <svg viewBox="0 0 100 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto" }) => {
 
   return (
     <img 
-      src="./logo.png" 
+      src="/logo.png" 
       alt="Tam Bảo Group Logo" 
       className={`object-contain ${className}`}
       onError={() => setImageError(true)}
