@@ -7,7 +7,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto" }) => {
   return (
     <img 
-      src="/logo.png" 
+      src="/tambao-logo.png" 
       alt="Tam Bảo Group Logo" 
       className={`object-contain ${className}`}
     />

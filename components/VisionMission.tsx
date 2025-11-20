@@ -1,18 +1,31 @@
 import React from 'react';
 import { Section } from './Section';
 import { Eye, Target, Users, Globe } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const VisionMission: React.FC = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation(0.2);
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.1);
+
   return (
     <Section id="vision" bg="light">
-      <div className="text-center mb-16">
+      <div 
+        ref={titleRef}
+        className={`text-center mb-16 transition-all duration-1000 ${
+          titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Tầm Nhìn & Sứ Mệnh</h2>
         <div className="w-20 h-1 bg-tambao-green mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div ref={cardsRef} className="grid md:grid-cols-2 gap-8">
         {/* Vision */}
-        <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 relative overflow-hidden group h-full">
+        <div 
+          className={`bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 relative overflow-hidden group h-full transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
+            cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+          }`}
+        >
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
             <Eye size={120} />
           </div>
@@ -33,7 +46,12 @@ export const VisionMission: React.FC = () => {
         </div>
 
         {/* Mission */}
-        <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 relative overflow-hidden group h-full">
+        <div 
+          className={`bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 relative overflow-hidden group h-full transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
+            cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+          }`}
+          style={{ transitionDelay: '150ms' }}
+        >
            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
             <Target size={120} />
           </div>
