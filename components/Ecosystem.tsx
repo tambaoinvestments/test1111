@@ -63,18 +63,35 @@ export const Ecosystem: React.FC = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.1);
 
   return (
-    <Section id="ecosystem">
+    <Section id="ecosystem" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-green-50/30 to-purple-50/30">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-tambao-green/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-tambao-purple/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-tambao-yellow/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      
+      <div className="relative z-10">
       <div 
         ref={titleRef}
         className={`text-center mb-16 px-4 transition-all duration-1000 ${
           titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <span className="text-tambao-green font-semibold tracking-wider uppercase text-sm">Mô Hình Hoạt Động</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 text-balance">Hệ Sinh Thái 3 Trụ Cột Chiến Lược</h2>
-        <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-pretty">
-          Sức mạnh của Tam Bảo Group nằm ở thế "kiềng ba chân" vững chãi, bổ trợ lẫn nhau, tạo nên một chu trình giá trị khép kín.
+        <div className="inline-block px-4 py-2 bg-gradient-to-r from-tambao-green to-emerald-500 text-white rounded-full text-sm font-semibold mb-4 shadow-lg animate-pulse">
+          ⭐ Mô Hình Hoạt Động Độc Đáo
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4 text-balance">
+          <span className="bg-gradient-to-r from-tambao-green via-tambao-purple to-tambao-yellow bg-clip-text text-transparent">
+            Hệ Sinh Thái 3 Trụ Cột Chiến Lược
+          </span>
+        </h2>
+        <p className="text-slate-600 text-lg mt-6 max-w-2xl mx-auto text-pretty leading-relaxed">
+          Sức mạnh của Tam Bảo Group nằm ở thế <strong className="text-tambao-green">"kiềng ba chân"</strong> vững chãi, bổ trợ lẫn nhau, tạo nên một chu trình giá trị khép kín.
         </p>
+        <div className="flex justify-center gap-3 mt-6">
+          <div className="w-3 h-3 rounded-full bg-tambao-green animate-bounce"></div>
+          <div className="w-3 h-3 rounded-full bg-tambao-purple animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+          <div className="w-3 h-3 rounded-full bg-tambao-yellow animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        </div>
       </div>
 
       <div 
@@ -141,6 +158,7 @@ export const Ecosystem: React.FC = () => {
             ]}
           />
         </div>
+      </div>
       </div>
     </Section>
   );

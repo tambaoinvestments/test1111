@@ -5,76 +5,53 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-slate-900 text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
-          {/* Brand Info */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
-              <Logo className="h-14 w-auto" />
-              <span className="font-bold text-xl">TAM BẢO GROUP</span>
-            </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 text-balance">
-              Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. <br/>
-              Vững Tâm Đức - Sáng Tầm Nhìn.
-            </p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              {/* Social place holders */}
-              <div className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-tambao-green cursor-pointer transition-colors">
-                 <span className="font-bold text-xs">FB</span>
-              </div>
-              <div className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-tambao-green cursor-pointer transition-colors">
-                 <span className="font-bold text-xs">LN</span>
-              </div>
+    <footer id="contact" className="bg-slate-900 text-white py-8 relative overflow-hidden border-t border-slate-800">
+      {/* Decorative top line */}
+      <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-tambao-green via-tambao-purple to-tambao-yellow"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+          {/* Brand */}
+          <div className="flex items-center gap-3">
+            <Logo className="h-12 w-auto" />
+            <div>
+              <span className="font-bold text-lg block">TAM BẢO GROUP</span>
+              <span className="text-xs text-slate-400">Vững Tâm Đức - Sáng Tầm Nhìn</span>
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold mb-6 border-l-4 border-tambao-green pl-3 text-center md:text-left">Thông Tin Liên Hệ</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-tambao-green shrink-0 mt-1" />
-                <span className="text-slate-300 text-sm text-pretty">
-                  88 Láng Hạ, Phường Láng Hạ, Quận Đống Đa, Thành phố Hà Nội
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CreditCard className="w-5 h-5 text-tambao-green shrink-0" />
-                <span className="text-slate-300 text-sm">
-                  Mã số thuế: 0110046173
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="mailto:support@tambaogroup.asia" className="text-slate-300 text-sm hover:text-white transition-colors break-all">
-                  support@tambaogroup.asia
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="https://tambaogroup.asia" className="text-slate-300 text-sm hover:text-white transition-colors break-all">
-                  tambaogroup.asia
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="tel:0339009699" className="text-slate-300 text-sm hover:text-white transition-colors">
-                  0339 009 699
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="https://zalo.me/306351576255816539" target="_blank" rel="noopener noreferrer" className="text-slate-300 text-sm hover:text-white transition-colors">
-                  Zalo OA: Tam Bảo Group
-                </a>
-              </div>
-            </div>
+          {/* Contact Info - Compact */}
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="tel:0339009699" className="flex items-center gap-2 text-slate-300 hover:text-tambao-green transition-colors">
+              <Phone className="w-4 h-4" />
+              <span>0339 009 699</span>
+            </a>
+            <a href="mailto:support@tambaogroup.asia" className="flex items-center gap-2 text-slate-300 hover:text-tambao-green transition-colors">
+              <Mail className="w-4 h-4" />
+              <span>support@tambaogroup.asia</span>
+            </a>
+            <a href="https://zalo.me/306351576255816539" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
+              <MessageCircle className="w-4 h-4" />
+              <span>Zalo OA</span>
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} CÔNG TY CỔ PHẦN TAM BẢO GROUP. All rights reserved.</p>
+        {/* Bottom Info */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-6 border-t border-slate-800 text-xs text-slate-400">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-2">
+              <MapPin className="w-3 h-3" />
+              88 Láng Hạ, Đống Đa, Hà Nội
+            </span>
+            <span className="flex items-center gap-2">
+              <CreditCard className="w-3 h-3" />
+              MST: 0110046173
+            </span>
+          </div>
+          <p>
+            &copy; {new Date().getFullYear()} <span className="text-white font-medium">Tam Bảo Group</span>. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

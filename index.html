@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tam Bảo Group - Vững Tâm Đức, Sáng Tầm Nhìn</title>
     <meta name="description" content="Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. Hệ sinh thái Tài chính, Giáo dục và Thiện nguyện." />
+    <meta name="keywords" content="Tam Bảo Group, đầu tư, tài chính, giáo dục, thiện nguyện, chứng khoán, startup, Tam Bảo Investments, Tam Bảo Academy, Tam Bảo Charity" />
+    <meta name="author" content="Tam Bảo Group" />
+    <link rel="canonical" href="https://tambaogroup.asia" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tambaogroup.asia" />
+    <meta property="og:title" content="Tam Bảo Group - Vững Tâm Đức, Sáng Tầm Nhìn" />
+    <meta property="og:description" content="Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. Hệ sinh thái Tài chính, Giáo dục và Thiện nguyện." />
+    <meta property="og:image" content="https://tambaogroup.asia/tambao-logo.png" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="Tam Bảo Group" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://tambaogroup.asia" />
+    <meta name="twitter:title" content="Tam Bảo Group - Vững Tâm Đức, Sáng Tầm Nhìn" />
+    <meta name="twitter:description" content="Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. Hệ sinh thái Tài chính, Giáo dục và Thiện nguyện." />
+    <meta name="twitter:image" content="https://tambaogroup.asia/tambao-logo.png" />
+    
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/tambao-logo.png" />
-    <meta property="og:image" content="/tambao-logo.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4CAF50" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Tam Bảo Group" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -32,7 +63,34 @@
     </script>
     <style>
       html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', sans-serif; }
+      body { 
+        font-family: 'Inter', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      
+      /* Allow text selection for content */
+      p, span, a, h1, h2, h3, h4, h5, h6 {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+      
+      /* Touch optimization */
+      * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      
+      /* Smooth scrolling for touch */
+      .touch-pan-y {
+        touch-action: pan-y;
+      }
+      
+      /* Dark mode support */
+      .dark {
+        color-scheme: dark;
+      }
       
       @keyframes fadeInUp {
         from {
@@ -62,6 +120,37 @@
           box-shadow: 0 0 40px rgba(76, 175, 80, 0.6);
         }
       }
+      
+      @keyframes snowfall {
+        0% {
+          transform: translateY(-10vh) translateX(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) translateX(50px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+      
+      .animate-snowfall {
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      
+      /* Custom cursor */
+      * {
+        cursor: none !important;
+      }
+      
+      a, button, input, textarea, select {
+        cursor: none !important;
+      }
     </style>
   <script type="importmap">
 {
@@ -75,7 +164,53 @@
 </script>
 </head>
   <body class="bg-slate-50 text-slate-800 antialiased">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tam Bảo Group",
+      "alternateName": "Công Ty Cổ Phần Tam Bảo Group",
+      "url": "https://tambaogroup.asia",
+      "logo": "https://tambaogroup.asia/tambao-logo.png",
+      "description": "Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. Hệ sinh thái Tài chính, Giáo dục và Thiện nguyện.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "88 Láng Hạ, Phường Láng Hạ",
+        "addressLocality": "Quận Đống Đa",
+        "addressRegion": "Hà Nội",
+        "addressCountry": "VN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84-339-009-699",
+        "contactType": "Customer Service",
+        "email": "support@tambaogroup.asia",
+        "availableLanguage": "Vietnamese"
+      },
+      "sameAs": [
+        "https://zalo.me/306351576255816539"
+      ],
+      "taxID": "0110046173"
+    }
+    </script>
+    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    
+    <!-- PWA Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((error) => {
+              console.log('SW registration failed: ', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

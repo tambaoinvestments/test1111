@@ -1,0 +1,27 @@
+{
+  "name": "Tam Bảo Group - Vững Tâm Đức, Sáng Tầm Nhìn",
+  "short_name": "Tam Bảo Group",
+  "description": "Kiến tạo Thịnh vượng – Phụng sự Cộng đồng. Hệ sinh thái Tài chính, Giáo dục và Thiện nguyện.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/tambao-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/tambao-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "education"],
+  "lang": "vi",
+  "dir": "ltr"
+}
