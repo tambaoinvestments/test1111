@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
-          <Logo className="h-10 w-auto md:h-12 drop-shadow-sm group-hover:scale-105 transition-transform duration-300" />
+          <Logo className="h-14 w-auto md:h-16 drop-shadow-sm group-hover:scale-105 transition-transform duration-300" />
           <div className="flex flex-col">
             <span className={`font-bold text-lg leading-none tracking-tight ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white'} `}>
               TAM BẢO GROUP

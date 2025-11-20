@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
-              <Logo className="h-10 w-auto" />
+              <Logo className="h-14 w-auto" />
               <span className="font-bold text-xl">TAM BẢO GROUP</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 text-balance">
