@@ -1,7 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { MapPin, Mail, Globe, CreditCard, Phone, MessageCircle } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { MapPin, Mail, Globe, CreditCard } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -55,18 +54,6 @@ export const Footer: React.FC = () => {
                 <Globe className="w-5 h-5 text-tambao-green shrink-0" />
                 <a href="https://tambaogroup.asia" className="text-slate-300 text-sm hover:text-white transition-colors break-all">
                   tambaogroup.asia
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="tel:0339009699" className="text-slate-300 text-sm hover:text-white transition-colors">
-                  0339 009 699
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-tambao-green shrink-0" />
-                <a href="https://zalo.me/306351576255816539" target="_blank" rel="noopener noreferrer" className="text-slate-300 text-sm hover:text-white transition-colors">
-                  Zalo OA: Tam Bảo Group
                 </a>
               </div>
             </div>

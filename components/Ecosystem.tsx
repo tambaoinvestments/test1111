@@ -1,7 +1,6 @@
 import React from 'react';
 import { Section } from './Section';
 import { TrendingUp, BookOpen, Heart } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const PillarCard: React.FC<{
   title: string;
@@ -59,17 +58,9 @@ const PillarCard: React.FC<{
 };
 
 export const Ecosystem: React.FC = () => {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation(0.2);
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.1);
-
   return (
     <Section id="ecosystem">
-      <div 
-        ref={titleRef}
-        className={`text-center mb-16 px-4 transition-all duration-1000 ${
-          titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
+      <div className="text-center mb-16 px-4">
         <span className="text-tambao-green font-semibold tracking-wider uppercase text-sm">Mô Hình Hoạt Động</span>
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 text-balance">Hệ Sinh Thái 3 Trụ Cột Chiến Lược</h2>
         <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-pretty">
@@ -77,17 +68,8 @@ export const Ecosystem: React.FC = () => {
         </p>
       </div>
 
-      <div 
-        ref={cardsRef}
-        className="grid lg:grid-cols-3 gap-8"
-      >
-        <div 
-          className={`transition-all duration-700 ${
-            cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ transitionDelay: '0ms' }}
-        >
-          <PillarCard 
+      <div className="grid lg:grid-cols-3 gap-8">
+        <PillarCard 
           color="green"
           icon={<TrendingUp size={32} />}
           title="Tam Bảo Investments"
@@ -100,47 +82,31 @@ export const Ecosystem: React.FC = () => {
           ]}
         />
 
-        </div>
+        <PillarCard 
+          color="purple"
+          icon={<BookOpen size={32} />}
+          title="Tam Bảo Academy"
+          subtitle="Giáo dục & Khai phóng"
+          description="Đào tạo thế hệ nhà đầu tư toàn diện cả về tư duy (IQ) lẫn cảm xúc (EQ)."
+          features={[
+            "Sự khác biệt: Kết hợp Kiến thức Tài chính & Thiền định",
+            "Mục tiêu: Tâm lý giao dịch ổn định, tránh tham lam - sợ hãi",
+            "Kết quả: Hiệu quả đầu tư cao nhất"
+          ]}
+        />
 
-        <div 
-          className={`transition-all duration-700 ${
-            cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ transitionDelay: '150ms' }}
-        >
-          <PillarCard 
-            color="purple"
-            icon={<BookOpen size={32} />}
-            title="Tam Bảo Academy"
-            subtitle="Giáo dục & Khai phóng"
-            description="Đào tạo thế hệ nhà đầu tư toàn diện cả về tư duy (IQ) lẫn cảm xúc (EQ)."
-            features={[
-              "Sự khác biệt: Kết hợp Kiến thức Tài chính & Thiền định",
-              "Mục tiêu: Tâm lý giao dịch ổn định, tránh tham lam - sợ hãi",
-              "Kết quả: Hiệu quả đầu tư cao nhất"
-            ]}
-          />
-        </div>
-
-        <div 
-          className={`transition-all duration-700 ${
-            cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ transitionDelay: '300ms' }}
-        >
-          <PillarCard 
-            color="red"
-            icon={<Heart size={32} />}
-            title="Tam Bảo Charity"
-            subtitle="Phụng sự & Sẻ chia"
-            description="Đây là 'trái tim' của Tam Bảo Group. Lợi nhuận kinh doanh được trích lập cho quỹ thiện nguyện."
-            features={[
-              "Nguồn quỹ: Trích từ lợi nhuận kinh doanh",
-              "Hoạt động: Bài bản, Minh bạch",
-              "Hướng tới: Xã hội văn minh, giàu lòng nhân ái"
-            ]}
-          />
-        </div>
+        <PillarCard 
+          color="red"
+          icon={<Heart size={32} />}
+          title="Tam Bảo Charity"
+          subtitle="Phụng sự & Sẻ chia"
+          description="Đây là 'trái tim' của Tam Bảo Group. Lợi nhuận kinh doanh được trích lập cho quỹ thiện nguyện."
+          features={[
+            "Nguồn quỹ: Trích từ lợi nhuận kinh doanh",
+            "Hoạt động: Bài bản, Minh bạch",
+            "Hướng tới: Xã hội văn minh, giàu lòng nhân ái"
+          ]}
+        />
       </div>
     </Section>
   );

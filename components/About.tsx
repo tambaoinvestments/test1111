@@ -1,12 +1,8 @@
 import React from 'react';
 import { Section } from './Section';
 import { Leaf, Scale, HeartHandshake } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const About: React.FC = () => {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation(0.2);
-  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation(0.2);
-  
   const pillars = [
     {
       icon: <Leaf className="w-8 h-8 text-tambao-yellow" />,
@@ -31,12 +27,7 @@ export const About: React.FC = () => {
   return (
     <Section id="about" className="relative">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div 
-          ref={titleRef}
-          className={`text-center md:text-left transition-all duration-1000 ${
-            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="text-center md:text-left">
           <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold mb-4">
             Về Chúng Tôi
           </div>
@@ -58,18 +49,9 @@ export const About: React.FC = () => {
           </div>
         </div>
         
-        <div 
-          ref={contentRef}
-          className="flex flex-col gap-4"
-        >
+        <div className="flex flex-col gap-4">
           {pillars.map((pillar, idx) => (
-            <div 
-              key={idx} 
-              className={`p-6 rounded-2xl border ${pillar.color} transition-all duration-700 hover:-translate-y-1 hover:shadow-lg ${
-                contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-              }`}
-              style={{ transitionDelay: `${idx * 150}ms` }}
-            >
+            <div key={idx} className={`p-6 rounded-2xl border ${pillar.color} transition-transform hover:-translate-y-1`}>
               <div className="flex items-start gap-4">
                 <div className="mt-1 p-2 bg-white rounded-lg shadow-sm flex-shrink-0">
                   {pillar.icon}

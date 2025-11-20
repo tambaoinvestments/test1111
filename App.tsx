@@ -7,7 +7,6 @@ import { Ecosystem } from './components/Ecosystem';
 import { Values } from './components/Values';
 import { Commitment } from './components/Commitment';
 import { Footer } from './components/Footer';
-import { ZaloButton } from './components/ZaloButton';
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Commitment />
       </main>
       <Footer />
-      <ZaloButton />
     </div>
   );
 }
