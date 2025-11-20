@@ -1,0 +1,2 @@
+Vui lòng kéo thả file logo.png vào thư mục này (public).
+Sau khi có file public/logo.png, website sẽ tự động nhận diện logo và favicon.
