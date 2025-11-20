@@ -8,14 +8,12 @@ import { Values } from './components/Values';
 import { Commitment } from './components/Commitment';
 import { CounterStats } from './components/CounterStats';
 import { Testimonials } from './components/Testimonials';
-import { FAQ } from './components/FAQ';
+import { Partners } from './components/Partners';
 import { Footer } from './components/Footer';
 import { ZaloButton } from './components/ZaloButton';
 import { BackToTop } from './components/BackToTop';
 import { LoadingSkeleton } from './components/LoadingSkeleton';
 import { MobileBottomNav } from './components/MobileBottomNav';
-import { Snowfall } from './components/Snowfall';
-import { CustomCursor } from './components/CustomCursor';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,8 +33,6 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 relative">
-      <Snowfall />
-      <CustomCursor />
       <Header />
       <main className="flex-grow pb-16 md:pb-0">
         {/* 1. Hero - Giới thiệu chính */}
@@ -63,8 +59,8 @@ function App() {
         {/* 8. Đánh giá khách hàng */}
         <Testimonials />
         
-        {/* 9. FAQ */}
-        <FAQ />
+        {/* 9. Đối tác */}
+        <Partners />
       </main>
       <Footer />
       <ZaloButton />

@@ -138,19 +138,41 @@
         }
       }
       
-      .animate-snowfall {
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
+      @keyframes scroll-partners {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
       
-      /* Custom cursor */
-      * {
-        cursor: none !important;
+      .animate-scroll-partners {
+        animation: scroll-partners 60s linear infinite;
+        will-change: transform;
       }
       
-      a, button, input, textarea, select {
-        cursor: none !important;
+      .animate-scroll-partners:hover {
+        animation-play-state: paused;
       }
+      
+      /* Mobile optimization */
+      @media (max-width: 768px) {
+        .animate-scroll-partners {
+          animation: scroll-partners 40s linear infinite;
+        }
+      }
+      
+      /* Hide scrollbar but keep functionality */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      
     </style>
   <script type="importmap">
 {

@@ -54,43 +54,43 @@ export const Testimonials: React.FC = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <div className="bg-slate-900 py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+    <div className="bg-slate-900 py-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
             Khách Hàng Nói Gì Về Chúng Tôi
           </h2>
-          <p className="text-slate-400">
+          <p className="text-slate-400 text-sm">
             Những phản hồi chân thực từ khách hàng và đối tác
           </p>
         </div>
 
-        <div className="relative bg-slate-800 rounded-2xl p-8 md:p-12">
+        <div className="relative bg-slate-800 rounded-xl p-6 md:p-8">
           <Quote className="absolute top-6 left-6 w-12 h-12 text-tambao-green/20" />
           
           <div className="relative z-10">
             {/* Avatar & Info */}
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <img 
                 src={current.avatar} 
                 alt={current.name}
-                className="w-16 h-16 rounded-full object-cover border-4 border-tambao-green/20"
+                className="w-12 h-12 rounded-full object-cover border-2 border-tambao-green/20"
               />
               <div>
-                <h3 className="text-xl font-bold text-white">{current.name}</h3>
-                <p className="text-slate-400 text-sm">{current.role}</p>
+                <h3 className="text-lg font-bold text-white">{current.name}</h3>
+                <p className="text-slate-400 text-xs">{current.role}</p>
               </div>
             </div>
 
             {/* Rating */}
-            <div className="flex gap-1 mb-4">
+            <div className="flex gap-1 mb-3">
               {[...Array(current.rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-tambao-yellow text-tambao-yellow" />
+                <Star key={i} className="w-4 h-4 fill-tambao-yellow text-tambao-yellow" />
               ))}
             </div>
 
             {/* Content */}
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+            <p className="text-slate-300 text-sm leading-relaxed mb-6">
               "{current.content}"
             </p>
 
@@ -98,19 +98,19 @@ export const Testimonials: React.FC = () => {
             <div className="flex items-center justify-between">
               <button
                 onClick={prevTestimonial}
-                className="p-2 hover:bg-slate-700 rounded-full transition-colors"
+                className="p-1.5 hover:bg-slate-700 rounded-full transition-colors"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-5 h-5 text-white" />
               </button>
 
-              <div className="flex gap-2">
+              <div className="flex gap-1.5">
                 {testimonials.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentIndex ? 'bg-tambao-green w-8' : 'bg-slate-600'
+                    className={`w-1.5 h-1.5 rounded-full transition-all ${
+                      idx === currentIndex ? 'bg-tambao-green w-6' : 'bg-slate-600'
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   />
@@ -119,10 +119,10 @@ export const Testimonials: React.FC = () => {
 
               <button
                 onClick={nextTestimonial}
-                className="p-2 hover:bg-slate-700 rounded-full transition-colors"
+                className="p-1.5 hover:bg-slate-700 rounded-full transition-colors"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-5 h-5 text-white" />
               </button>
             </div>
           </div>
